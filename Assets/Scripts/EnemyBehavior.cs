@@ -28,7 +28,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         enemyPosX = (playerPos.transform.position.x);                             //Con esto pillamos las coord. X del jugador.
 
-        posX = new Vector2(enemyPosX, 0);
+        posX = new Vector2(enemyPosX, transform.position.y);
 
         transform.position = Vector2.MoveTowards(transform.position, posX, enemySpeed*Time.deltaTime);       //Con esto el enemigo se movera a donde este el jugador (eje de coordenadas x)(movetowards clasico)
 
@@ -40,7 +40,6 @@ public class EnemyBehavior : MonoBehaviour
         if (OnTop())
         {
             Destroy(gameObject);
-            //playerPos.GetComponent<PlayerMovement>().Jump();
         }
     }
 
