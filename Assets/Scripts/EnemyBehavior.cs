@@ -47,14 +47,14 @@ public class EnemyBehavior : MonoBehaviour
 
     bool OnSide()
     {
-        bool outcome = Physics2D.Raycast(transform.position, Vector2.left, 1f, playerMask) || Physics2D.Raycast(transform.position, Vector2.right, 1f, playerMask);   //Solo detecta al tag PlayerMask (el jugador)
+        bool outcome = Physics2D.Raycast(transform.position, Vector2.left, 2f, playerMask) || Physics2D.Raycast(transform.position, Vector2.right, 2f, playerMask);   //Solo detecta al tag PlayerMask (el jugador)
 
         return outcome;
     }
 
     bool OnTop()
     {
-        bool outcome = Physics2D.Raycast(transform.position, Vector2.up, 1.3f, playerMask);
+        bool outcome = Physics2D.Raycast(transform.position, Vector2.up, 3f, playerMask);
 
         return outcome;
     }
