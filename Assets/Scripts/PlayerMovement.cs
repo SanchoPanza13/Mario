@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+
+
+public enum PlayerState {IDLE, WALKING, JUMPING }
+
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,19 +15,25 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 directionVec;
 
-    public float speed = 10, jumpForce = 10, heightToScan = 2f;
+    public float speed = 10, jumpForce = 11, heightToScan = 2f;
 
     public LayerMask grndMask;
 
     private bool isJumping = false;
 
+    private PlayerState _currentState;
 
+    
+
+    
 
 
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+
+        
     }
 
     
@@ -30,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
         directionVec = new Vector2(Input.GetAxis("Horizontal"), 0);    // Movimiento horizontal jugador
 
         Jump();
+
+        if (directionVec.magnitude == 0)                              // Si es 0 el jugador esta quieto (IDLE)
+        {
+            _currentState = PlayerState.IDLE;
+        }
+        else
+        {
+            _currentState = PlayerState.WALKING;
+        }
     }
 
     private void FixedUpdate()
@@ -46,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
             rb2D.velocity = new Vector2(rb2D.velocity.x, 0);            // Siempre salta con la misma fuerza, sin verse afectado por la gravedad
 
             rb2D.AddForce(Vector2.up * jumpForce * rb2D.gravityScale, ForceMode2D.Impulse);     // Aseguramos que siempre supere la gravedad al multiplicar rb2D.gravityScale
+
+            _currentState = PlayerState.JUMPING;
         }
     }
 
@@ -61,6 +84,16 @@ public class PlayerMovement : MonoBehaviour
     public void ResetPlayer()
     {
         gameObject.transform.position = new Vector2(-8.0182f, -1.794f);
+    }
+
+    public PlayerState GetPlayerState()
+    {
+        return _currentState;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return directionVec;
     }
 
 
