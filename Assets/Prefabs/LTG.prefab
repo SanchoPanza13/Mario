@@ -105,6 +105,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 2048
+  rayCastD: 1.5
 --- !u!61 &1735882516025850709
 BoxCollider2D:
   m_ObjectHideFlags: 0

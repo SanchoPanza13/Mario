@@ -23,10 +23,10 @@ public class PlayerAnimationController : MonoBehaviour
 
     void Update()
     {
-        switch (playerMovement.GetPlayerState())
+        switch (playerMovement.GetPlayerState())    // Metodo que detecta cuando el jugador se mueve o no, para asignar la animacion correcta.
         {
             case PlayerState.IDLE:
-                _animator.SetBool("isWalking", false);
+                _animator.SetBool("isWalking", false);         // Cuando el bool isWalking sea falso se pone la animacion idle
                 break;
             case PlayerState.WALKING:
                 _animator.SetBool("isWalking", true);
@@ -35,7 +35,7 @@ public class PlayerAnimationController : MonoBehaviour
                 break;
         }
 
-        if (playerMovement.GetDirection().x < 0)
+        if (playerMovement.GetDirection().x < 0)       // Metodo para darle la vuelta al sprite cuando este vaya a la izq.
         {
             SpriteRenderer.flipX = true;
         }

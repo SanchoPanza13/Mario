@@ -19,6 +19,8 @@ public class EnemyBehavior : MonoBehaviour
 
     private float enemyPosX;
 
+    public float rayCastD = 1.5f;     // Distancia del raycast.
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>(); 
@@ -47,14 +49,14 @@ public class EnemyBehavior : MonoBehaviour
 
     bool OnSide()
     {
-        bool outcome = Physics2D.Raycast(transform.position, Vector2.left, 2f, playerMask) || Physics2D.Raycast(transform.position, Vector2.right, 2f, playerMask);   //Solo detecta al tag PlayerMask (el jugador)
+        bool outcome = Physics2D.Raycast(transform.position, Vector2.left, rayCastD, playerMask) || Physics2D.Raycast(transform.position, Vector2.right, rayCastD, playerMask);   //Solo detecta al tag PlayerMask (el jugador) cuando este toca por encima al enemigo
 
-        return outcome;
+        return outcome;     
     }
 
     bool OnTop()
     {
-        bool outcome = Physics2D.Raycast(transform.position, Vector2.up, 3f, playerMask);
+        bool outcome = Physics2D.Raycast(transform.position, Vector2.up, rayCastD, playerMask);     //Solo detecta al tag PlayerMask (el jugador) cuando este toca por el lado del enemigo
 
         return outcome;
     }
