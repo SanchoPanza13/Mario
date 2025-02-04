@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask grndMask;
 
+    public AudioClip jumpingClip;
+
     private bool isJumping = false;
 
     private PlayerState _currentState;
@@ -69,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
             rb2D.AddForce(Vector2.up * jumpForce * rb2D.gravityScale, ForceMode2D.Impulse);     // Aseguramos que siempre supere la gravedad al multiplicar rb2D.gravityScale
 
             _currentState = PlayerState.JUMPING;
+
+            AudioManager.instance.PlayAudio(jumpingClip, "jumpingSoundObjects");
         }
     }
 

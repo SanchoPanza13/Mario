@@ -1896,6 +1896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683629582}
   - component: {fileID: 683629581}
+  - component: {fileID: 683629583}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1913,7 +1914,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cd585b4f433ed5745936852858e539db, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0
@@ -2014,6 +2015,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683629583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683629580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302e23c0b34d7ed4f9dab208d20ede0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &684843898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2080,7 @@ MonoBehaviour:
   grndMask:
     serializedVersion: 2
     m_Bits: 1024
+  jumpingClip: {fileID: 8300000, guid: cd585b4f433ed5745936852858e539db, type: 3}
 --- !u!95 &684843901
 Animator:
   serializedVersion: 5

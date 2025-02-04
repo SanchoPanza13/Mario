@@ -49,7 +49,7 @@ public class Fades : MonoBehaviour
 
 
 
-    //Crear sonido, 1crear empty, 2ponemos nombre, 3metemos al componene audiosource, 4arrastrar audio a audioclip, 5customizar, 6(3D) Hijo del duenno de ese audio, 7Si no esta loopeado destruirlo.
+    
 
 
 
