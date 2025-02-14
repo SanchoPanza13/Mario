@@ -100,5 +100,4 @@ public class PlayerMovement : MonoBehaviour
         return directionVec;
     }
 
-
 }
