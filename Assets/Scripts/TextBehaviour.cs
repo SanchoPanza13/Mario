@@ -21,7 +21,7 @@ public class TextBehaviour : MonoBehaviour
         switch(variableToUpdate)
         {
             case InterfaceVariable.COINS:
-                textToUpdate.text = "Monedas disponibles: " + GameManager.instance.GetCoins();
+                textToUpdate.text = "Monedas recogidas: " + GameManager.instance.GetCoins() + "/10";
                 break;
             case InterfaceVariable.TIME:
                 textToUpdate.text="Tiempo transcurrido: " + GameManager.instance.GetTime().ToString("00.00" + " s");

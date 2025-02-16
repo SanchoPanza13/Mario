@@ -21,9 +21,19 @@ public class EnemyBehavior : MonoBehaviour
 
     public float rayCastD = 1.5f;     // Distancia del raycast.
 
+    public AudioClip enemySound1;
+
+    public AudioClip enemySound2;
+
+    public float volumeFX = 1f;
+
+    private int soundRandomizer;
+
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>(); 
+        rb2D = GetComponent<Rigidbody2D>();
+
+        soundRandomizer = Random.Range(0, 2);
     }
 
     void Update()
@@ -36,12 +46,14 @@ public class EnemyBehavior : MonoBehaviour
 
         if (OnSide())
         {
-            playerPos.GetComponent<PlayerMovement>().ResetPlayer();      //Accedemos al componente playermovement de playerpos (el jugador)
+            RandomSound(soundRandomizer);
+            
+            Destroy(gameObject);
         }
 
         if (OnTop())
         {
-            Destroy(gameObject);
+            playerPos.GetComponent<PlayerMovement>().ResetPlayer();      //Accedemos al componente playermovement de playerpos (el jugador)
         }
     }
 
@@ -61,7 +73,18 @@ public class EnemyBehavior : MonoBehaviour
         return outcome;
     }
 
-
+    private void RandomSound(int RandNum)
+    {
+        switch (RandNum)
+        {
+            case 0:
+                AudioManager.instance.PlayAudio(enemySound1, "enemy1");
+                break;
+            case 1:
+                AudioManager.instance.PlayAudio(enemySound2, "enemy2", false ,volumeFX);
+                break;
+        }
+    }
 
 
 
