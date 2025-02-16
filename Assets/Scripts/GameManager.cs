@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private float coins = 0;
-    private float timeCurrent = 0;
+    
     private float testTime = 0f;
 
     private void Awake()
