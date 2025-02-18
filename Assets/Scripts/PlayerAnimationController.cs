@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
 
-    private Animator _animator;
+    private Animator _animator;                                //Variable animator
 
-    private PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;                     //Variable playermovement
 
     private SpriteRenderer SpriteRenderer;
 

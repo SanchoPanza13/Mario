@@ -101737,7 +101737,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.5801887, g: 0.9424747, b: 1, a: 1}
-  m_Intensity: 0.07
+  m_Intensity: 0.04
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -101800,11 +101800,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1792919821810246431, guid: 32fe3ea62bcb9c948bb8322e6df207ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 103.066505
+      value: 111.45
       objectReference: {fileID: 0}
     - target: {fileID: 1792919821810246431, guid: 32fe3ea62bcb9c948bb8322e6df207ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9910965
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 1792919821810246431, guid: 32fe3ea62bcb9c948bb8322e6df207ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -101948,7 +101948,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.96859354, b: 0.5896226, a: 1}
+  m_Color: {r: 1, g: 0.76511276, b: 0, a: 1}
   m_Intensity: 8
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -101968,8 +101968,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 8.1
-  m_PointLightOuterAngle: 8.1
+  m_PointLightInnerAngle: 5.01
+  m_PointLightOuterAngle: 10.71
   m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 42.890484
   m_ShapeLightParametricSides: 5

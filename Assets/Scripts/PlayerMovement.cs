@@ -25,12 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerState _currentState;
 
-    
-
-    
-
-
-
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();

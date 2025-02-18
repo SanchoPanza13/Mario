@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
 
-    private GameObject player;
+    private GameObject player;   //Gameobject de jugador
 
-
+    //Pese al nombre del script, este tambien se usa en la luz focal que sigue al jugador
 
 
     void Start()

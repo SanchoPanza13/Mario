@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    private float coins = 0;
+    private float coins = 0;                                //Variable para monedas
     
-    private float testTime = 0f;
+    private float testTime = 0f;                            //Variable del tiempo
 
     private void Awake()
     {
@@ -32,23 +32,23 @@ public class GameManager : MonoBehaviour
        
     void Update()
     {
-        testTime += Time.deltaTime;
+        testTime += Time.deltaTime;                          //Contador del tiempo
     }
 
 
 
 
-    public float GetCoins()
+    public float GetCoins()                                 //Metodo que devuelve la cantidad de moneda
     {
         return coins;
     }
 
-    public void AddCoins(float addCoin)
+    public void AddCoins(float addCoin)                     //Metodo de suma de moneda
     {
         coins += addCoin;
     }
 
-    public float GetTime()
+    public float GetTime()                                 //Metodo que devuelve el tiempo actual
     {
         return testTime;
     }

@@ -5,36 +5,36 @@ using UnityEngine;
 public class CoinBehavior : MonoBehaviour
 {
 
-    public GameObject jugador;
+    public GameObject player;        //Gameobject para el jugador
+     
+    float coin = 1;                  //Variable de monedas
 
-    float coin = 1;
-
-    public AudioClip coinSound1;
+    public AudioClip coinSound1;     //Variables audioclip
 
     public AudioClip coinSound2;
 
-    public float volumeFX = 1f;
+    public float volumeFX = 1f;      //volumen
 
-    private int randomizer;
+    private int randomizer;          //Randomizador (aleatorizar el sonido que sale al coger una moneda)
 
     private void Start()
     {
-        randomizer = Random.Range(0, 2);
+        randomizer = Random.Range(0, 2);     //El randomizador tiene valores enteros entre el 0 y 1 (50%)
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerMovement>())
+        if (collision.gameObject.GetComponent<PlayerMovement>())      //Si el gameobject tiene el componente playermovement (el jugador)
         {
-            GameManager.instance.AddCoins(coin);
+            GameManager.instance.AddCoins(coin);                      //Invocamos al metodo addcoins para sumar la moneda al texto
 
-            RandomCoinSound(randomizer);
+            RandomCoinSound(randomizer);                              //Suena el audio
 
-            Destroy(gameObject);
+            Destroy(gameObject);                                      //Destruye la moneda
         }
     }
 
-    private void RandomCoinSound(int randNum)
+    private void RandomCoinSound(int randNum)       //Randomizar el sonido, igual que en el script EnemyBehaviour
     {
         switch (randNum)
         {

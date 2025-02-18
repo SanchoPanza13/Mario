@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        //singleton
         if (!instance)
         {
             instance = this;

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BackGroundMusic : MonoBehaviour
 {
-
-    public AudioClip musicSource;
-    private bool isLoop = true;
-    public float volume = 1.0f;
+    //Variables para completar el metodo PlayAudio
+    public AudioClip musicSource;          //El clip de audio
+    private bool isLoop = true;            //Si el audio hace loop
+    public float volume = 1.0f;            //Volumen
 
 
 
     void Start()
     {
-        AudioManager.instance.PlayAudio(musicSource, "Music", isLoop, volume);  //Cogemos del Script AudioManager
+        AudioManager.instance.PlayAudio(musicSource, "Music", isLoop, volume);  //Accedemos al audiomanager e invocamos el metodo playaudio
     }
 }

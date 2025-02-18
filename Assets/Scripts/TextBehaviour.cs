@@ -7,9 +7,9 @@ using UnityEngine;
 public class TextBehaviour : MonoBehaviour
 {
 
-    public InterfaceVariable variableToUpdate;
+    public InterfaceVariable variableToUpdate;      //Variable de texto publica
 
-    private TMP_Text textToUpdate;
+    private TMP_Text textToUpdate;                  //Variable para actualizar el texto
 
     private void Start()
     {
